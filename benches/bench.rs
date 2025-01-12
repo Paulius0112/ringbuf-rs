@@ -25,8 +25,5 @@ fn benchmark_ring_buffer_write(c: &mut Criterion) {
 //     });
 // }
 
-
-
-
 criterion_group!(benches, benchmark_ring_buffer_write);
 criterion_main!(benches);

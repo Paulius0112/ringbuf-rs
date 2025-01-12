@@ -1,14 +1,15 @@
-
+use ringbuf_rs::Buffer;
 use ringbuf_rs::RingBuffer;
 
 fn main() {
-    let mut buffer: RingBuffer<u32, 10> = RingBuffer::new();
+    let mut buffer: RingBuffer<u32, 3> = RingBuffer::new();
 
-    buffer.write(1);
-    buffer.write(1);
-    buffer.write(1);
-    buffer.write(1);
+    buffer.push(1);
+    buffer.push(2);
+    buffer.push(3);
+    buffer.push(4);
 
-    buffer.read();
-    buffer.read();
+    let item = buffer.get();
+    println!("Got {}", item.unwrap());
+    buffer.get();
 }
