@@ -8,6 +8,8 @@ const fn mask_modulo(index: usize, size: usize) -> usize {
     index % size
 }
 
+// Other buffer implementations (stack/heap) should reuse this trait
+// for standard API
 pub trait Buffer<T>
 where
     T: Copy,
